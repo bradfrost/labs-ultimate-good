@@ -1,29 +1,7 @@
 import path from 'path';
 import { defineConfig } from 'vite';
 
-const eddieRoot = path.resolve(__dirname, '../../eddie-design-system');
-
 export default defineConfig({
-  resolve: {
-    alias: {
-      '@brad-frost-web/eddie-web-components': path.join(eddieRoot, 'packages/eddie-web-components'),
-      '@brad-frost-web/eddie-design-tokens': path.join(eddieRoot, 'packages/eddie-design-tokens'),
-      '@brad-frost-web/eddie-icons': path.join(eddieRoot, 'packages/eddie-icons'),
-      '@brad-frost-web/eddie-recipes': path.join(eddieRoot, 'packages/eddie-recipes'),
-    },
-  },
-  css: {
-    preprocessorOptions: {
-      scss: {
-        api: 'modern-compiler',
-        includePaths: [
-          path.join(eddieRoot, 'packages/eddie-design-tokens/core/scss'),
-          path.join(eddieRoot, 'packages/eddie-design-tokens'),
-          path.join(eddieRoot, 'packages'),
-        ],
-      },
-    },
-  },
   build: {
     rollupOptions: {
       input: {
